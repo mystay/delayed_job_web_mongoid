@@ -1,6 +1,6 @@
 require "action_controller/railtie"
 require "logger"
-require "delayed_job_web"
+require "delayed_job_web_mongoid"
 
 class RailsApp < Rails::Application
   config.logger = Rails.logger = Logger.new(nil)

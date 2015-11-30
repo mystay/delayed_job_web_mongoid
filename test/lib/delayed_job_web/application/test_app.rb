@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'support/delayed_job_fake'
-require 'delayed_job_web/application/app'
+require 'delayed_job_web_mongoid/application/app'
 
 class TestDelayedJobWeb < MiniTest::Unit::TestCase
 
