@@ -1,9 +1,9 @@
-delayed_job_web
-===============
+delayed_job_web_mongoid
+=======================
 
 A [resque][0] inspired (read: stolen) interface for delayed_job.
 This gem is written to work with rails 3 and 4 applications using
-activerecord.
+mongoid.
 
 Some features:
 
@@ -24,7 +24,7 @@ Quick Start For Rails 3 and 4 Applications
 Add the dependency to your Gemfile
 
 ```ruby
-gem "delayed_job_web"
+gem "delayed_job_web_mongoid"
 ```
 
 Install it...
@@ -50,7 +50,7 @@ if Rails.env.production?
 end
 ```
 
-`delayed_job_web` runs as a Sinatra application within the rails application. Visit it at `/delayed_job`.
+`delayed_job_web_mongoid` runs as a Sinatra application within the rails application. Visit it at `/delayed_job`.
 
 ## Serving static assets
 
@@ -101,6 +101,7 @@ Releasing a new version
 
 Author
 ------
+Ben Petro
 
 Erick Schmitt - [@ejschmitt][1]
 
