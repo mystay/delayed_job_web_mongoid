@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require 'active_support'
-require 'active_record'
-require 'delayed_job'
+require 'delayed_job_mongoid'
 
 class DelayedJobWeb < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -145,9 +144,9 @@ class DelayedJobWeb < Sinatra::Base
     rel =
       case type
       when :working
-        rel.where('locked_at IS NOT NULL')
+        rel.where(:locked_at.ne => nil)
       when :failed
-        rel.where('last_error IS NOT NULL')
+        rel.where(:last_error.ne => nil)
       when :pending
         rel.where(:attempts => 0, :locked_at => nil)
       else

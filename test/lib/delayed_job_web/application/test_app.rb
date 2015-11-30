@@ -14,7 +14,7 @@ class TestDelayedJobWeb < MiniTest::Unit::TestCase
 
     dataset = Minitest::Mock.new
     where = lambda { | criteria |
-      criteria.must_equal 'last_error IS NOT NULL'
+      criteria.must_equal :last_error.ne => nil
       dataset
     }
 
@@ -35,7 +35,7 @@ class TestDelayedJobWeb < MiniTest::Unit::TestCase
 
     dataset = Minitest::Mock.new
     where = lambda { | criteria |
-      criteria.must_equal 'last_error IS NOT NULL'
+      criteria.must_equal :last_error.ne => nil
       dataset
     }
 
